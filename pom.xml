@@ -26,7 +26,29 @@
             <version>7.15.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>7.20.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber-jvm</artifactId>
+            <version>2.20.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>2.29.1</version>
+        </dependency>
 
+
+        <!-- Allure Dependency -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>2.29.1</version>
+        </dependency>
         <!-- Selenium Dependency -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -40,6 +62,8 @@
             <version>5.5.1</version>
         </dependency>
 
+
+
         <!-- JUnit Dependency -->
         <dependency>
             <groupId>junit</groupId>
@@ -47,5 +71,28 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
+    <build>
+        <plugins>
+            <!-- Allure Report Plugin -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.8</version> <!-- Replace with the version you're using -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>serve</goal> <!-- Generates and serves the Allure report -->
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <resultsDirectory>CucumberSeleniumDemo/allure-results</resultsDirectory>  <!-- Ensure this is the correct path -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
 </project>

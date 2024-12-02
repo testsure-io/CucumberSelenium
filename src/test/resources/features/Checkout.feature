@@ -1,4 +1,4 @@
-Feature: ShoppingCart
+Feature: Checkout
 
   Scenario: Verify product Add to cart successful
     Given I am on the login page

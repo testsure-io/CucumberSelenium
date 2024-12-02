@@ -19,14 +19,22 @@ import org.openqa.selenium.interactions.Actions;
 import java.time.Duration;
 
 import org.openqa.selenium.WebElement;
+import utils.SharedDriver;
 //import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginSteps extends BaseSteps{
+public class LoginSteps{
+    private final SharedDriver sharedDriver;
+
+    public LoginSteps(SharedDriver sharedDriver) {
+        this.sharedDriver = sharedDriver;
+    }
+    WebDriver driver;
     Select filterDropDown;
     Actions sideMenuBtn;
+
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
-        // Write code here that turns the phrase above into concrete actions
+        driver = sharedDriver.getDriver();
         driver.get("https://www.saucedemo.com/v1/");
     }
 
